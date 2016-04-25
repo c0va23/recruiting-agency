@@ -41,4 +41,5 @@ group :test do
   gem 'shoulda-matchers', '~> 3.1'
   gem 'factory_girl_rails', '~> 4.7'
   gem 'ffaker', '~> 2.2'
+  gem 'database_cleaner', '~> 1.5'
 end
