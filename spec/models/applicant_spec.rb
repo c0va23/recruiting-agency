@@ -68,4 +68,9 @@ RSpec.describe Applicant, type: :model do
       it { is_expected.to validate_numericality_of(:expected_salary).is_greater_than(0) }
     end
   end
+
+  describe 'association' do
+    it { is_expected.to have_many(:applicant_skills) }
+    it { is_expected.to have_many(:skills).through(:applicant_skills) }
+  end
 end
