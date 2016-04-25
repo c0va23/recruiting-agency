@@ -9,7 +9,13 @@ class Applicant < ActiveRecord::Base
     \z
   }xi
 
+  CONTACT_REGEXP = %r{
+    \w+@(\w+\.)+\w+
+    |
+    \+7([\(\)\-\ ]*\d){10}
+  }xi
+
   validates :name, presence: true, format: { with: NAME_REGEXP }
-  validates :contact, presence: true
+  validates :contact, presence: true, format: { with: CONTACT_REGEXP }
   validates :expected_salary, presence: true, numericality: { greater_than: 0 }
 end

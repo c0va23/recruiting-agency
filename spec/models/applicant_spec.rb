@@ -38,11 +38,34 @@ RSpec.describe Applicant, type: :model do
       end
     end
 
-    it { is_expected.to validate_presence_of(:contact) }
-    it 'allow phone number for contact'
-    it 'allow email for contact'
+    describe 'contact' do
+      let(:simple_phone_number) { format '+7%010d', rand(999_99_999_999) }
+      let(:complex_phone_number) do
+        '+7 (%03d) %02d-%03d-%03d' % [rand(999), rand(99), rand(999), rand(999)]
+      end
 
-    it { is_expected.to validate_presence_of(:expected_salary) }
-    it { is_expected.to validate_numericality_of(:expected_salary).is_greater_than(0) }
+      it { is_expected.to validate_presence_of(:contact) }
+
+      it 'allow simple phone number for contact' do
+        is_expected.to allow_value(simple_phone_number).for(:contact)
+      end
+
+      it 'allow complex phone number for contact' do
+        is_expected.to allow_value(complex_phone_number).for(:contact)
+      end
+
+      it 'allow email for contact' do
+        is_expected.to allow_value(FFaker::Internet.email).for(:contact)
+      end
+
+      it 'not allow contact without phone or email' do
+        is_expected.to_not allow_value(FFaker::Lorem.sentence).for(:contact)
+      end
+    end
+
+    describe 'expected_salary' do
+      it { is_expected.to validate_presence_of(:expected_salary) }
+      it { is_expected.to validate_numericality_of(:expected_salary).is_greater_than(0) }
+    end
   end
 end
