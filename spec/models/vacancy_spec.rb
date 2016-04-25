@@ -8,4 +8,16 @@ RSpec.describe Vacancy, type: :model do
     it { is_expected.to have_db_column(:contacts).of_type(:text) }
     it { is_expected.to have_db_column(:created_at).of_type(:datetime) }
   end
+
+  describe 'validations' do
+    it { is_expected.to validate_presence_of(:name) }
+
+    it { is_expected.to validate_presence_of(:validity_days) }
+    it { is_expected.to validate_numericality_of(:validity_days).is_greater_than(0) }
+
+    it { is_expected.to validate_presence_of(:salary) }
+    it { is_expected.to validate_numericality_of(:salary).is_greater_than(0) }
+
+    it { is_expected.to validate_presence_of(:contacts) }
+  end
 end
