@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160425110740) do
+ActiveRecord::Schema.define(version: 20160425112737) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,4 +33,17 @@ ActiveRecord::Schema.define(version: 20160425110740) do
     t.datetime "updated_at",    null: false
   end
 
+  create_table "vacancy_skills", force: :cascade do |t|
+    t.integer  "vacancy_id", null: false
+    t.integer  "skill_id",   null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "vacancy_skills", ["skill_id"], name: "index_vacancy_skills_on_skill_id", using: :btree
+  add_index "vacancy_skills", ["vacancy_id", "skill_id"], name: "index_vacancy_skills_on_vacancy_id_and_skill_id", unique: true, using: :btree
+  add_index "vacancy_skills", ["vacancy_id"], name: "index_vacancy_skills_on_vacancy_id", using: :btree
+
+  add_foreign_key "vacancy_skills", "skills"
+  add_foreign_key "vacancy_skills", "vacancies"
 end
