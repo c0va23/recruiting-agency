@@ -1,8 +1,10 @@
 class VacanciesController < ApplicationController
+  include Roar::Rails::ControllerAdditions
+
   respond_to :json
 
   def index
-    vacancies = Vacancy.all
+    vacancies = Vacancy.includes(:skills).all
 
     respond_with vacancies
   end
@@ -38,7 +40,7 @@ class VacanciesController < ApplicationController
   private
 
   def vacancy_params
-    params.permit(:name, :contacts, :salary, :validity_days)
+    params.permit(:name, :contacts, :salary, :validity_days, skill_ids: [])
   end
 
   def find_vacancy
