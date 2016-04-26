@@ -53,6 +53,9 @@ angular.module(
         templateUrl: 'applicant_form.html',
         controller: 'ApplicantFormController'
       })
+      .otherwise({
+        redirectTo: '/vacancies'
+      })
     ;
   }
 ])
