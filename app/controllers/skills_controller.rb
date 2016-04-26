@@ -1,4 +1,6 @@
 class SkillsController < ApplicationController
+  include Roar::Rails::ControllerAdditions
+
   respond_to :json
 
   def index
