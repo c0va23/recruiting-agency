@@ -29,7 +29,11 @@ angular.module(
     $routeProvider
       .when('/vacancies', {
         templateUrl: 'vacancies.html',
-        controller: 'VacanciesController',
+        controller: 'VacanciesController'
+      })
+      .when('/applicants', {
+        templateUrl: 'applicants.html',
+        controller: 'ApplicantsController'
       })
     ;
   }

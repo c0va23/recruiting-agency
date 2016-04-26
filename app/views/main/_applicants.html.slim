@@ -1,0 +1,12 @@
+table
+  caption Соискатели
+  tbody
+    tr ng-repeat='applicant in applicants'
+      td
+        | {{applicant.name}}
+      td
+        | {{applicant.expected_salary}}
+      td
+        | {{applicant.active}}
+      td
+        | {{applicant.contact}}

@@ -7,4 +7,10 @@ angular.module('app')
     return $resource('/api/vacancies');
   }
 ])
+.factory('Applicant', [
+  '$resource',
+  function($resource) {
+    return $resource('/api/applicants')
+  }
+])
 ;
