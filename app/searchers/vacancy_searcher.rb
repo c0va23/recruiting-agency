@@ -10,6 +10,7 @@ class VacancySearcher
       .where.not(skill_id: @skill_ids)
     Vacancy
       .where('vacancies.salary >= ?', @salary)
+      .where("created_at + validity_days * interval '1 day' > ?", Time.current)
       .where('not exists(?)', extra_vacancy_skills)
       .order(salary: :desc)
   end

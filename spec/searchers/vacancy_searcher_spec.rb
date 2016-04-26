@@ -69,5 +69,11 @@ RSpec.describe VacancySearcher do
 
       it { is_expected.to be_empty }
     end
+
+    context 'when exist vacancy is expired' do
+      let!(:vacancy) { create :vacancy, salary: salary, skills: skills, created_at: 1.year.ago }
+
+      it { is_expected.to be_empty }
+    end
   end
 end
