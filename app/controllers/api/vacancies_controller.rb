@@ -16,7 +16,7 @@ class Api::VacanciesController < Api::BaseController
   def create
     vacancy = Vacancy.create(vacancy_params)
 
-    respond_with vacancy
+    respond_with vacancy, location: [:api, vacancy]
   end
 
   def destroy
