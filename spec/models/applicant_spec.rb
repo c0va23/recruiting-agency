@@ -73,6 +73,10 @@ RSpec.describe Applicant, type: :model do
       it { is_expected.to allow_value(false).for(:active) }
       it { is_expected.to_not allow_value(nil).for(:active) }
     end
+
+    describe 'skill_ids' do
+      it { is_expected.to validate_presence_of(:skill_ids) }
+    end
   end
 
   describe 'association' do

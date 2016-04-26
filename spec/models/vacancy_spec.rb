@@ -19,6 +19,8 @@ RSpec.describe Vacancy, type: :model do
     it { is_expected.to validate_numericality_of(:salary).is_greater_than(0) }
 
     it { is_expected.to validate_presence_of(:contacts) }
+
+    it { is_expected.to validate_presence_of(:skill_ids) }
   end
 
   describe 'associations' do

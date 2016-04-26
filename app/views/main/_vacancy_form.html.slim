@@ -29,9 +29,14 @@ form.formt ng-submit='saveVacancy()'
     ul.help-block
       li ng-repeat='message in errors.validity_days'
         | {{message}}
-  p
+
+  p ng-class='{"has-error": errors.skill_ids.length}'
     label Умения
     ra-skills-input skill-ids='vacancy.skill_ids'
+
+    ul.help-block
+      li ng-repeat='message in errors.skill_ids'
+        | {{message}}
 
   .form-group
     button.btn Сохранить

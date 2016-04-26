@@ -28,9 +28,13 @@ form.formt ng-submit='saveApplicant()'
       input type='checkbox' ng-model="applicant.active"
       | Активный
 
-  p
+  p ng-class='{"has-error": errors.skill_ids.length}'
     label Умения
     ra-skills-input skill-ids='applicant.skill_ids'
+    ul.help-block
+      li ng-repeat='message in errors.skill_ids'
+        | {{message}}
+
 
   .form-group
     button.btn Сохранить
