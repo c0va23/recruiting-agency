@@ -17,7 +17,11 @@ angular.module('app')
   '$resource',
   function($resource) {
     return $resource('/api/applicants/:id', {}, {
-      update: {method: 'PUT'}
+      update: {method: 'PUT'},
+      search: {
+        url: '/api/applicants/search',
+        isArray: true,
+      },
     });
   }
 ])

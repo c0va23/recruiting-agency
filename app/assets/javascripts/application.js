@@ -52,6 +52,10 @@ angular.module(
         templateUrl: 'applicants.html',
         controller: 'ApplicantsController'
       })
+      .when('/applicants/search', {
+        templateUrl: 'applicants.html',
+        controller: 'ApplicantSearchController'
+      })
       .when('/applicants/new', {
         templateUrl: 'applicant_form.html',
         controller: 'ApplicantFormController'

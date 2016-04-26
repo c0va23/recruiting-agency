@@ -25,3 +25,6 @@ table.table
         ra-skills skill-ids="vacancy.skill_ids"
       td
         a href='#/vacancies/{{vacancy.id}}/edit' Редактировать
+        | &nbsp;
+        a href='#/applicants/search?salary={{vacancy.salary}}{{vacancy.skill_ids | skillIdsToQuery}}'
+          | Кандидаты
