@@ -1,12 +1,20 @@
+h1 Соискатели
+
 table
-  caption Соискатели
+  thead
+    tr
+      td Имя
+      td Ожидаемая зарплата
+      td Статус
+      td Контакты
   tbody
     tr ng-repeat='applicant in applicants'
-      td
+      th
         | {{applicant.name}}
       td
         | {{applicant.expected_salary}}
       td
-        | {{applicant.active}}
+        strong ng-if='applicant.active' Активен
+        i Не активет
       td
         | {{applicant.contact}}
