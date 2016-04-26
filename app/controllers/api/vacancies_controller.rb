@@ -35,10 +35,20 @@ class Api::VacanciesController < Api::BaseController
     respond_with vacancy
   end
 
+  def search
+    vacancies = VacancySearcher.new(**vacancy_search_params).results
+
+    respond_with vacancies
+  end
+
   private
 
   def vacancy_params
     params.permit(:name, :contacts, :salary, :validity_days, skill_ids: [])
+  end
+
+  def vacancy_search_params
+    params.permit(:salary, skill_ids: []).symbolize_keys
   end
 
   def find_vacancy

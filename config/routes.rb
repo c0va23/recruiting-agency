@@ -4,7 +4,11 @@ Rails.application.routes.draw do
   namespace :api do
     resources :skills, only: %i(index create show)
 
-    resources :vacancies, only: %i(index show create destroy update)
+    resources :vacancies, only: %i(index show create destroy update) do
+      collection do
+        get :search
+      end
+    end
 
     resources :applicants, only: %i(index show create destroy update)
   end
