@@ -10,4 +10,34 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require_tree .
+//= require angular
+//= require angular-resource
+//= require angular-route
+//= require_self
+//= require models.js
+//= require_tree ./controllers
+
+angular.module(
+    'app', [
+      'ngRoute',
+      'ngResource'
+    ]
+)
+.config([
+  '$routeProvider',
+  function($routeProvider) {
+    $routeProvider
+      .when('/vacancies', {
+        templateUrl: 'vacancies.html',
+        controller: 'VacanciesController',
+      })
+    ;
+  }
+])
+.config([
+  '$httpProvider',
+  function($httpProvider) {
+    $httpProvider.defaults.headers.common['Accept'] = 'application/json';
+  }
+])
+;

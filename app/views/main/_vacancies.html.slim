@@ -1,0 +1,11 @@
+h1 Вакансии
+
+div ng-repeat="vacancy in vacancies"
+  h2
+    | {{vacancy.name}}
+  p
+    | Контакты: {{vacancy.contacts}}
+  p
+    | Зарплата: {{vacancy.salary}}
+  p
+    | Дата публикации: {{vacancy.created_at | date}}
