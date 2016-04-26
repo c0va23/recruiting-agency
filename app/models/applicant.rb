@@ -18,7 +18,8 @@ class Applicant < ActiveRecord::Base
   validates :name, presence: true, format: { with: NAME_REGEXP }
   validates :contact, presence: true, format: { with: CONTACT_REGEXP }
   validates :expected_salary, presence: true, numericality: { greater_than: 0 }
+  validates :active, inclusion: { in: [true, false] }
 
-  has_many :applicant_skills
+  has_many :applicant_skills, dependent: :destroy
   has_many :skills, through: :applicant_skills
 end

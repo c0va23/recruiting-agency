@@ -67,10 +67,16 @@ RSpec.describe Applicant, type: :model do
       it { is_expected.to validate_presence_of(:expected_salary) }
       it { is_expected.to validate_numericality_of(:expected_salary).is_greater_than(0) }
     end
+
+    describe 'active' do
+      it { is_expected.to allow_value(true).for(:active) }
+      it { is_expected.to allow_value(false).for(:active) }
+      it { is_expected.to_not allow_value(nil).for(:active) }
+    end
   end
 
   describe 'association' do
-    it { is_expected.to have_many(:applicant_skills) }
+    it { is_expected.to have_many(:applicant_skills).dependent(:destroy) }
     it { is_expected.to have_many(:skills).through(:applicant_skills) }
   end
 end
