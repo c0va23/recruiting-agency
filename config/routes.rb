@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root to: 'main#root'
 
   namespace :api do
     resources :skills, only: %i(index create show)
