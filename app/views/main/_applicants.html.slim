@@ -7,6 +7,7 @@ table.table
       td Ожидаемая зарплата
       td Статус
       td Контакты
+      td Навыки
   tbody
     tr ng-repeat='applicant in applicants'
       th
@@ -18,3 +19,5 @@ table.table
         i Не активет
       td
         | {{applicant.contact}}
+      td
+        ra-skills skill-ids='applicant.skill_ids'

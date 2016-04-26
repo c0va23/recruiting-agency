@@ -13,9 +13,11 @@
 //= require angular
 //= require angular-resource
 //= require angular-route
+//= require underscore
 //= require_self
 //= require models.js
 //= require_tree ./controllers
+//= require_tree ./directives
 
 angular.module(
     'app', [

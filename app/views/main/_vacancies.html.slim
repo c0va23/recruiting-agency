@@ -7,6 +7,7 @@ table.table
       td Контакты
       td Зарплата
       td Дата публикации
+      td Требуемые умения
   tbody
     tr ng-repeat="vacancy in vacancies"
       th
@@ -17,3 +18,5 @@ table.table
         | {{vacancy.salary}}
       td
         | {{vacancy.created_at | date}}
+      td
+        ra-skills skill-ids="vacancy.skill_ids"

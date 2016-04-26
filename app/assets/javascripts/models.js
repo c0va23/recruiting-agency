@@ -13,4 +13,10 @@ angular.module('app')
     return $resource('/api/applicants')
   }
 ])
+.factory('Skill', [
+  '$resource',
+  function($resource) {
+    return $resource('/api/skills')
+  }
+])
 ;
