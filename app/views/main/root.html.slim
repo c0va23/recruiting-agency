@@ -11,7 +11,13 @@ html ng-app='app'
 
     = include_template 'applicants'
 
-  body
-    a ng-href='#/vacancies' Вакансии
-    a ng-href='#/applicants' Соискатели
+  body.container
+    nav.navbar.navbar-default
+      .container-fluid
+        navbar-header
+          ul.nav.navbar-nav
+            li
+              a ng-href='#/vacancies' Вакансии
+            li
+              a ng-href='#/applicants' Соискатели
     ng-view
