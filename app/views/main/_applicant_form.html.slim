@@ -1,0 +1,32 @@
+h1 Редактирование соискателя
+
+form.formt ng-submit='saveApplicant()'
+
+  .form-group ng-class='{"has-error": errors.name.length}'
+    label for='applicant_name' Имя
+    input.form-control id='applicant_name' ng-model='applicant.name'
+    ul.help-block
+      li ng-repeat='message in errors.name'
+        | {{message}}
+
+  .form-group ng-class='{"has-error": errors.contact.length}'
+    label for='applicant_contact' Контакты
+    input.form-control id='applicant_contact' ng-model='applicant.contact'
+    ul.help-block
+      li ng-repeat='message in errors.contact'
+        | {{message}}
+
+  .form-group ng-class='{"has-error": errors.expected_salary.length}'
+    label for='applicant_expected_salary' Ожидаемая зарплата
+    input.form-control id='applicant_expected_salary' ng-model='applicant.expected_salary'
+    ul.help-block
+      li ng-repeat='message in errors.expected_salary'
+        | {{message}}
+
+  .checkbox
+    label
+      input type='checkbox'ng-model="applicant.active"
+      | Активный
+
+  .form-group
+    button.btn Сохранить

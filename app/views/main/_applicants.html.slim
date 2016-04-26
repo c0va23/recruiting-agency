@@ -1,5 +1,7 @@
 h1 Соискатели
 
+a.btn.btn-default href='#/applicants/new' Новый соискатель
+
 table.table
   thead
     tr
@@ -8,6 +10,7 @@ table.table
       td Статус
       td Контакты
       td Навыки
+      td
   tbody
     tr ng-repeat='applicant in applicants'
       th
@@ -21,3 +24,5 @@ table.table
         | {{applicant.contact}}
       td
         ra-skills skill-ids='applicant.skill_ids'
+      td
+        a href='#/applicants/{{applicant.id}}/edit' Редактировать

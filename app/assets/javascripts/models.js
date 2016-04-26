@@ -12,7 +12,9 @@ angular.module('app')
 .factory('Applicant', [
   '$resource',
   function($resource) {
-    return $resource('/api/applicants');
+    return $resource('/api/applicants/:id', {}, {
+      update: {method: 'PUT'}
+    });
   }
 ])
 .factory('Skill', [

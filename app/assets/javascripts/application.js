@@ -45,6 +45,14 @@ angular.module(
         templateUrl: 'applicants.html',
         controller: 'ApplicantsController'
       })
+      .when('/applicants/new', {
+        templateUrl: 'applicant_form.html',
+        controller: 'ApplicantFormController'
+      })
+      .when('/applicants/:applicantId/edit', {
+        templateUrl: 'applicant_form.html',
+        controller: 'ApplicantFormController'
+      })
     ;
   }
 ])

@@ -16,7 +16,7 @@ class Api::ApplicantsController < Api::BaseController
   def create
     applicant = Applicant.create(applicant_params)
 
-    respond_with applicant
+    respond_with applicant, location: [:api, applicant]
   end
 
   def update
