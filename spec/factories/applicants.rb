@@ -12,7 +12,7 @@ FactoryGirl.define do
       FFaker::Internet.email
     end
 
-    active { rand > 0.5 }
+    active { true }
 
     expected_salary { rand(100_000..200_000) }
   end

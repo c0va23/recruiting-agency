@@ -68,5 +68,10 @@ RSpec.describe ApplicantSearcher do
       it { is_expected.to be_empty }
     end
 
+    context 'when exist applicant not active' do
+      let!(:applicant) { create :applicant, skills: skills, expected_salary: salary, active: false }
+
+      it { is_expected.to be_empty }
+    end
   end
 end

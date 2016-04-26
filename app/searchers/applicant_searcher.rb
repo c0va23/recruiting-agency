@@ -10,6 +10,7 @@ class ApplicantSearcher
       .where(skill_id: @skill_ids)
       .select('count(1)')
     Applicant
+      .where(active: true)
       .where('expected_salary <= ?', @salary)
       .where('(?) = ?', applicant_matched_skill_count, @skill_ids.count)
       .order(:expected_salary)
