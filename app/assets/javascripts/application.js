@@ -14,6 +14,7 @@
 //= require angular-resource
 //= require angular-route
 //= require underscore
+//= require ngTagsInput/build/ng-tags-input
 //= require_self
 //= require models.js
 //= require_tree ./controllers
@@ -22,7 +23,8 @@
 angular.module(
     'app', [
       'ngRoute',
-      'ngResource'
+      'ngResource',
+      'ngTagsInput',
     ]
 )
 .config([

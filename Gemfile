@@ -32,6 +32,7 @@ source 'https://rails-assets.org' do
 
   gem 'rails-assets-bootstrap'
   gem 'rails-assets-underscore'
+  gem 'rails-assets-lunks--ngTagsInput'
 end
 
 # Other

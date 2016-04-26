@@ -101,6 +101,7 @@ GEM
     rails-assets-bootstrap (3.3.6)
       rails-assets-jquery (>= 1.9.1, < 3)
     rails-assets-jquery (2.2.3)
+    rails-assets-lunks--ngTagsInput (3.0.0)
     rails-assets-underscore (1.8.3)
     rails-deprecated_sanitizer (1.0.3)
       activesupport (>= 4.2.0.alpha)
@@ -205,6 +206,7 @@ DEPENDENCIES
   rails-assets-angular-resource!
   rails-assets-angular-route!
   rails-assets-bootstrap!
+  rails-assets-lunks--ngTagsInput!
   rails-assets-underscore!
   responders
   roar-rails (~> 1.0)
