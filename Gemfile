@@ -31,6 +31,7 @@ source 'https://rails-assets.org' do
   gem 'rails-assets-angular-resource'
 
   gem 'rails-assets-bootstrap'
+  gem 'rails-assets-underscore'
 end
 
 # Other
