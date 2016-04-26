@@ -12,12 +12,12 @@ html ng-app='app'
     = include_template 'applicants'
 
   body.container
-    nav.navbar.navbar-default
+    nav.navbar.navbar-default ng-controller='MenuController'
       .container-fluid
         navbar-header
           ul.nav.navbar-nav
-            li
+            li ng-class='{active: $location.url() == "/vacancies"}'
               a ng-href='#/vacancies' Вакансии
-            li
+            li ng-class='{active: $location.url() == "/applicants"}'
               a ng-href='#/applicants' Соискатели
     ng-view
