@@ -5,7 +5,11 @@ angular.module('app')
     $resource
   ) {
     return $resource('/api/vacancies/:id', {}, {
-      update: {method: 'PUT'}
+      update: {method: 'PUT'},
+      search: {
+        url: '/api/vacancies/search',
+        isArray: true,
+      },
     });
   }
 ])

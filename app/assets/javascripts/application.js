@@ -17,6 +17,7 @@
 //= require ngTagsInput/build/ng-tags-input
 //= require_self
 //= require models.js
+//= require filters
 //= require_tree ./controllers
 //= require_tree ./directives
 
@@ -34,6 +35,10 @@ angular.module(
       .when('/vacancies', {
         templateUrl: 'vacancies.html',
         controller: 'VacanciesController'
+      })
+      .when('/vacancies/search', {
+        templateUrl: 'vacancies.html',
+        controller: 'VacancySearchController'
       })
       .when('/vacancies/new', {
         templateUrl: 'vacancy_form.html',

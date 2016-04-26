@@ -26,3 +26,5 @@ table.table
         ra-skills skill-ids='applicant.skill_ids'
       td
         a href='#/applicants/{{applicant.id}}/edit' Редактировать
+        | &nbsp;
+        a ng-href='#/vacancies/search?salary={{applicant.expected_salary}}{{applicant.skill_ids | skillIdsToQuery}}' Вакансии
