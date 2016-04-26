@@ -10,7 +10,11 @@ Rails.application.routes.draw do
       end
     end
 
-    resources :applicants, only: %i(index show create destroy update)
+    resources :applicants, only: %i(index show create destroy update) do
+      collection do
+        get :search
+      end
+    end
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

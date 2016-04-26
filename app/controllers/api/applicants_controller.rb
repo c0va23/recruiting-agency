@@ -35,6 +35,12 @@ class Api::ApplicantsController < Api::BaseController
     respond_with applicant
   end
 
+  def search
+    applicants = ApplicantSearcher.new(**applicant_search_params).results
+
+    respond_with applicants
+  end
+
   private
 
   def find_applicant
@@ -43,5 +49,9 @@ class Api::ApplicantsController < Api::BaseController
 
   def applicant_params
     params.permit(:name, :contact, :expected_salary, :active, skill_ids: [])
+  end
+
+  def applicant_search_params
+    params.permit(:salary, skill_ids: []).symbolize_keys
   end
 end
