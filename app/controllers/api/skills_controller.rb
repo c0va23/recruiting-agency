@@ -16,7 +16,7 @@ class Api::SkillsController < Api::BaseController
   def create
     skill = Skill.create(skill_params)
 
-    respond_with skill
+    respond_with skill, location: [:api, skill]
   end
 
   private
