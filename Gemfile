@@ -6,6 +6,10 @@ gem 'rails', '~> 4.2.6'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 0.15'
 
+# Views and representation
+
+gem 'slim-rails', '~> 3.0'
+
 gem 'multi_json'
 gem 'responders'
 gem 'roar-rails', '~> 1.0'
