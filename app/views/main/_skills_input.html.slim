@@ -1,2 +1,7 @@
-tags-input ng-model='selectedSkills' display-property='name' key-property='id'
+tags-input[
+  ng-model='selectedSkills'
+  display-property='name'
+  key-property='id'
+  on-tag-added="createSkill($tag)"
+]
   auto-complete source='findSkills($query)'

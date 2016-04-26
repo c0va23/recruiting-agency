@@ -19,26 +19,41 @@ angular.module('app')
           var skills = Skill.query();
           var skillIdsDefered = $q.defer();
 
+          var setSkillIds = function() {
+            $scope.skillIds = _($scope.selectedSkills).pluck('id');
+          };
+
           $q.all([skillIdsDefered, skills.$promise]).then(function() {
             var skillsById = _(skills).indexBy('id');
             $scope.selectedSkills = _($scope.skillIds).map(function(skillId){
               return skillsById[skillId];
             });
-            $scope.$watchCollection('selectedSkills', function(){
-              $scope.skillIds = _($scope.selectedSkills).pluck('id');
-            });
+            $scope.$watchCollection('selectedSkills', setSkillIds);
           });
 
+          // Wait until skillIds not set value
           $scope.$watch('skillIds == undefined', function() {
             if($scope.skillIds) skillIdsDefered.resolve();
           });
 
           $scope.findSkills = function(query) {
-            var filteredSkills = _(skills).filter(function(skill){
+            return _(skills).filter(function(skill){
               return skill.name.indexOf(query) >= 0
             });
-            return filteredSkills
-          }
+          };
+
+          $scope.createSkill = function(newSkill) {
+            var existedSkill = _(skills).find(function(skill){
+              return skill.name == newSkill.name;
+            });
+
+            if(existedSkill != undefined) return;
+
+            Skill.save(newSkill, function(savedSkill) {
+              newSkill.id = savedSkill.id;
+              setSkillIds();
+            });
+          };
         }
       ],
     }
