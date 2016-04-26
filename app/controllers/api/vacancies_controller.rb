@@ -1,7 +1,5 @@
-class VacanciesController < ApplicationController
-  include Roar::Rails::ControllerAdditions
-
-  respond_to :json
+class Api::VacanciesController < Api::BaseController
+  represents :json, entity: VacancyRepresenter, collection: VacanciesRepresenter
 
   def index
     vacancies = Vacancy.includes(:skills).all

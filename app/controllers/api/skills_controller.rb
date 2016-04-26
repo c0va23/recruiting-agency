@@ -1,7 +1,5 @@
-class SkillsController < ApplicationController
-  include Roar::Rails::ControllerAdditions
-
-  respond_to :json
+class Api::SkillsController < Api::BaseController
+  represents :json, entity: SkillRepresenter, collection: SkillsRepresenter
 
   def index
     skills = Skill.all

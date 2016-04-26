@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
 
-  resources :skills, only: %i(index create show)
+  namespace :api do
+    resources :skills, only: %i(index create show)
 
-  resources :vacancies, only: %i(index show create destroy update)
+    resources :vacancies, only: %i(index show create destroy update)
 
-  resources :applicants, only: %i(index show create destroy update)
+    resources :applicants, only: %i(index show create destroy update)
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
