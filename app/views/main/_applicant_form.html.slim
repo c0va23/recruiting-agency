@@ -25,8 +25,11 @@ form.formt ng-submit='saveApplicant()'
 
   .checkbox
     label
-      input type='checkbox'ng-model="applicant.active"
+      input type='checkbox' ng-model="applicant.active"
       | Активный
+
+  p
+    ra-skills-input skill-ids='applicant.skill_ids'
 
   .form-group
     button.btn Сохранить
