@@ -62,7 +62,7 @@ RSpec.describe ApplicantSearcher do
     end
 
     context 'when exist applicant with partial skills' do
-      let(:partial_skills) { skills.sample(rand(skills.count)) }
+      let(:partial_skills) { skills.sample(rand(1...skills.count)) }
       let!(:applicant) { create :applicant, skills: partial_skills, expected_salary: salary }
 
       it { is_expected.to be_empty }
