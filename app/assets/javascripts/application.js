@@ -33,6 +33,14 @@ angular.module(
         templateUrl: 'vacancies.html',
         controller: 'VacanciesController'
       })
+      .when('/vacancies/new', {
+        templateUrl: 'vacancy_form.html',
+        controller: 'VacancyFormController'
+      })
+      .when('/vacancies/:vacancyId/edit', {
+        templateUrl: 'vacancy_form.html',
+        controller: 'VacancyFormController'
+      })
       .when('/applicants', {
         templateUrl: 'applicants.html',
         controller: 'ApplicantsController'

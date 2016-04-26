@@ -1,0 +1,34 @@
+h1 Редактирование вакансии
+
+form.formt ng-submit='saveVacancy()'
+
+  .form-group ng-class='{"has-error": errors.name.length}'
+    label for='vacancy_name' Название
+    input.form-control id='vacancy_name' ng-model='vacancy.name'
+    ul.help-block
+      li ng-repeat='message in errors.name'
+        | {{message}}
+
+  .form-group ng-class='{"has-error": errors.contacts.length}'
+    label for='vacancy_contacts' Контакты
+    input.form-control id='vacancy_contacts' ng-model='vacancy.contacts'
+    ul.help-block
+      li ng-repeat='message in errors.contacts'
+        | {{message}}
+
+  .form-group ng-class='{"has-error": errors.salary.length}'
+    label for='vacancy_salary' Зарплата
+    input.form-control id='vacancy_salary' ng-model='vacancy.salary'
+    ul.help-block
+      li ng-repeat='message in errors.salary'
+        | {{message}}
+
+  .form-group ng-class='{"has-error": errors.validity_days.length}'
+    label for='vacancy_validity_days' Актуальность (дней)
+    input.form-control type='number' id='vacancy_validity_days' ng-model="vacancy.validity_days"
+    ul.help-block
+      li ng-repeat='message in errors.validity_days'
+        | {{message}}
+
+  .form-group
+    button.btn Сохранить

@@ -4,13 +4,15 @@ angular.module('app')
   function(
     $resource
   ) {
-    return $resource('/api/vacancies');
+    return $resource('/api/vacancies/:id', {}, {
+      update: {method: 'PUT'}
+    });
   }
 ])
 .factory('Applicant', [
   '$resource',
   function($resource) {
-    return $resource('/api/applicants')
+    return $resource('/api/applicants');
   }
 ])
 .factory('Skill', [

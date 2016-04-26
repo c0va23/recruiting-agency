@@ -1,5 +1,7 @@
 h1 Вакансии
 
+a.btn.btn-default href='#/vacancies/new' Новыя вакансия
+
 table.table
   thead
     tr
@@ -8,6 +10,7 @@ table.table
       td Зарплата
       td Дата публикации
       td Требуемые умения
+      td
   tbody
     tr ng-repeat="vacancy in vacancies"
       th
@@ -20,3 +23,5 @@ table.table
         | {{vacancy.created_at | date}}
       td
         ra-skills skill-ids="vacancy.skill_ids"
+      td
+        a href='#/vacancies/{{vacancy.id}}/edit' Редактировать

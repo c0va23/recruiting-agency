@@ -3,6 +3,7 @@ module VacancyRepresenter
 
   property :id
   property :name
+  property :contacts
   property :salary
   property :validity_days
   property :created_at
