@@ -3,11 +3,13 @@ angular.module('app')
   '$scope',
   '$route',
   '$location',
+  'Notification',
   'Applicant',
   function(
     $scope,
     $route,
     $location,
+    Notification,
     Applicant
   ) {
     var applicantId = $route.current.params.applicantId;
@@ -20,10 +22,12 @@ angular.module('app')
       if(newApplicant) {
         $location.path('/applicants/' + applicant.id + '/edit')
       }
+      Notification.success('Сохранено');
     };
 
     var errorCallback = function(error) {
       $scope.errors = error.data.errors;
+      Notification.error('Ошибка при сохранении');
     };
 
     $scope.saveApplicant = function() {
