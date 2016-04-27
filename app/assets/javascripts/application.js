@@ -15,6 +15,8 @@
 //= require angular-route
 //= require underscore
 //= require ngTagsInput/build/ng-tags-input
+//= require angular-ui-notification
+//
 //= require_self
 //= require models
 //= require helpers
@@ -30,6 +32,7 @@ angular.module(
       'ngRoute',
       'ngResource',
       'ngTagsInput',
+      'ui-notification',
       'templates'
     ]
 )

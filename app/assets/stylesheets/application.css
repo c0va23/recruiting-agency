@@ -12,6 +12,8 @@
  *
  *= require bootstrap
  *= require ngTagsInput/build/ng-tags-input.scss
+ *= require angular-ui-notification
+ *
  *= require_tree .
  *= require_self
  */
