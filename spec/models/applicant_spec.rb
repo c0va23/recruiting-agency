@@ -58,6 +58,10 @@ RSpec.describe Applicant, type: :model do
         is_expected.to allow_value(FFaker::Internet.email).for(:contact)
       end
 
+      it 'allow email with dash for contact' do
+        is_expected.to allow_value('login-with-dash@host-with-dash.ru').for(:contact)
+      end
+
       it 'not allow contact without phone or email' do
         is_expected.to_not allow_value(FFaker::Lorem.sentence).for(:contact)
       end

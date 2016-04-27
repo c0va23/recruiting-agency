@@ -10,7 +10,7 @@ class Applicant < ActiveRecord::Base
   }xi
 
   CONTACT_REGEXP = %r{
-    \w+@(\w+\.)+\w+
+    [\w-]+@([\w-]+\.)+\w+
     |
     \+7([\(\)\-\ ]*\d){10}
   }xi
