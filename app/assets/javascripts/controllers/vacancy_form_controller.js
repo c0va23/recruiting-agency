@@ -3,11 +3,13 @@ angular.module('app')
   '$scope',
   '$route',
   '$location',
+  'Notification',
   'Vacancy',
   function(
     $scope,
     $route,
     $location,
+    Notification,
     Vacancy
   ) {
     var vacancyId = $route.current.params.vacancyId;
@@ -20,10 +22,12 @@ angular.module('app')
       if(newVacancy) {
         $location.path('/vacancies/' + vacancy.id + '/edit')
       }
+      Notification.success('Сохранено');
     };
 
     var errorCallback = function(error) {
       $scope.errors = error.data.errors;
+      Notification.error('Ошибка при сохранении');
     };
 
     $scope.saveVacancy = function() {
