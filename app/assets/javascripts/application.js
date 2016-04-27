@@ -16,7 +16,8 @@
 //= require underscore
 //= require ngTagsInput/build/ng-tags-input
 //= require_self
-//= require models.js
+//= require models
+//= require helpers
 //= require filters
 //= require_tree ./controllers
 //= require_tree ./directives
@@ -41,7 +42,7 @@ angular.module(
         controller: 'VacanciesController'
       })
       .when('/vacancies/search', {
-        templateUrl: 'vacancies/index.html',
+        templateUrl: 'vacancies/search.html',
         controller: 'VacancySearchController'
       })
       .when('/vacancies/new', {

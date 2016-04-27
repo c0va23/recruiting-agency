@@ -1,0 +1,26 @@
+table.table
+  thead
+    tr
+      td Название
+      td Контакты
+      td Зарплата
+      td Дата публикации
+      td Требуемые умения
+      td
+  tbody
+    tr ng-repeat="vacancy in vacancies"
+      th
+        | {{vacancy.name}}
+      td
+        | {{vacancy.contacts}}
+      td
+        | {{vacancy.salary}}
+      td
+        | {{vacancy.created_at | date}}
+      td
+        ra-skills skill-ids="vacancy.skill_ids"
+      td
+        a href='#/vacancies/{{vacancy.id}}/edit' Редактировать
+        | &nbsp;
+        a href='#/applicants/search?salary={{vacancy.salary}}{{vacancy.skill_ids | skillIdsToQuery}}'
+          | Кандидаты
