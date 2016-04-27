@@ -9,6 +9,7 @@ gem 'pg', '~> 0.15'
 # Views and representation
 
 gem 'slim-rails', '~> 3.0'
+gem 'rails-i18n'
 
 gem 'multi_json'
 gem 'responders'
