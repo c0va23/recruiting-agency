@@ -7,13 +7,6 @@ html ng-app='app'
     = stylesheet_link_tag    'application', media: 'all'
     = javascript_include_tag 'application'
 
-    = include_template 'vacancies'
-    = include_template 'applicants'
-    = include_template 'skills'
-    = include_template 'skills_input'
-    = include_template 'vacancy_form'
-    = include_template 'applicant_form'
-
   body.container
     nav.navbar.navbar-default ng-controller='MenuController'
       .container-fluid

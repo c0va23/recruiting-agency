@@ -3,7 +3,7 @@ angular.module('app')
   function() {
     return {
       restrict: 'E',
-      templateUrl: 'skills.html',
+      templateUrl: 'shared/skills.html',
       scope: {
         skillIds: '='
       },

@@ -20,12 +20,16 @@
 //= require filters
 //= require_tree ./controllers
 //= require_tree ./directives
+//
+//= require angular-rails-templates
+//= require_tree ../templates
 
 angular.module(
     'app', [
       'ngRoute',
       'ngResource',
       'ngTagsInput',
+      'templates'
     ]
 )
 .config([
@@ -33,35 +37,35 @@ angular.module(
   function($routeProvider) {
     $routeProvider
       .when('/vacancies', {
-        templateUrl: 'vacancies.html',
+        templateUrl: 'vacancies/index.html',
         controller: 'VacanciesController'
       })
       .when('/vacancies/search', {
-        templateUrl: 'vacancies.html',
+        templateUrl: 'vacancies/index.html',
         controller: 'VacancySearchController'
       })
       .when('/vacancies/new', {
-        templateUrl: 'vacancy_form.html',
+        templateUrl: 'vacancies/form.html',
         controller: 'VacancyFormController'
       })
       .when('/vacancies/:vacancyId/edit', {
-        templateUrl: 'vacancy_form.html',
+        templateUrl: 'vacancies/form.html',
         controller: 'VacancyFormController'
       })
       .when('/applicants', {
-        templateUrl: 'applicants.html',
+        templateUrl: 'applicants/index.html',
         controller: 'ApplicantsController'
       })
       .when('/applicants/search', {
-        templateUrl: 'applicants.html',
+        templateUrl: 'applicants/index.html',
         controller: 'ApplicantSearchController'
       })
       .when('/applicants/new', {
-        templateUrl: 'applicant_form.html',
+        templateUrl: 'applicants/form.html',
         controller: 'ApplicantFormController'
       })
       .when('/applicants/:applicantId/edit', {
-        templateUrl: 'applicant_form.html',
+        templateUrl: 'applicants/form.html',
         controller: 'ApplicantFormController'
       })
       .otherwise({

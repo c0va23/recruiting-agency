@@ -6,7 +6,7 @@ angular.module('app')
       scope: {
         skillIds: '='
       },
-      templateUrl: 'skills_input.html',
+      templateUrl: 'shared/skills_input.html',
       controller: [
         '$scope',
         '$q',
