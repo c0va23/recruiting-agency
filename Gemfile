@@ -33,11 +33,12 @@ source 'https://rails-assets.org' do
   gem 'rails-assets-angular'
   gem 'rails-assets-angular-route'
   gem 'rails-assets-angular-resource'
+  gem 'rails-assets-angular-ui-notification'
+  gem 'rails-assets-angular-checklist-model'
 
   gem 'rails-assets-bootstrap'
   gem 'rails-assets-underscore'
   gem 'rails-assets-lunks--ngTagsInput'
-  gem 'rails-assets-angular-ui-notification'
 end
 
 # Other
