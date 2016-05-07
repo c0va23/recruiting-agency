@@ -3,7 +3,7 @@ h1 Поиск соискателей
 form.form.form ng-submit='search()'
   h2 Умения
 
-  div.form-group
+  div.checkbox
     label.checkbox-inline ng-repeat='skill in skills'
       input type='checkbox' checklist-model="query['skill_ids[]']" checklist-value='skill.id'
       | {{skill.name}}
@@ -11,6 +11,16 @@ form.form.form ng-submit='search()'
   div.form-group
     label Зарплата
     input.form-control type='number' min=0 ng-model='query.salary'
+
+  div.checkbox
+    label
+      input(
+        type='checkbox'
+        ng-model='query.partial_match'
+        ng-true-value='"1"'
+        ng-false-value='undefined'
+      )
+      | Частичный поиск
 
   div.form-group
     button.btn.btn-default type='submit' Найти
