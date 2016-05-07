@@ -52,6 +52,10 @@ class Api::ApplicantsController < Api::BaseController
   end
 
   def applicant_search_params
-    params.permit(:salary, skill_ids: []).symbolize_keys
+    params.permit(
+      :salary,
+      :partial_match,
+      skill_ids: []
+    ).symbolize_keys
   end
 end
