@@ -48,7 +48,11 @@ class Api::VacanciesController < Api::BaseController
   end
 
   def vacancy_search_params
-    params.permit(:salary, skill_ids: []).symbolize_keys
+    params.permit(
+      :salary,
+      :partial_match,
+      skill_ids: [],
+    ).symbolize_keys
   end
 
   def find_vacancy
