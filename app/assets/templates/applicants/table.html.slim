@@ -19,9 +19,9 @@ table.table ng-controller='ApplicantTableController'
       td
         | {{applicant.contact}}
       td ng-class='{danger: !matchApplicantSkills(applicant)}'
-        ra-skills skill-ids='applicant.skill_ids'
+        ra-skills skills='applicant.skills'
       td
         a href='#/applicants/{{applicant.id}}/edit' Редактировать
         | &nbsp;
-        a ng-href='#/vacancies/search?salary={{applicant.expected_salary}}{{applicant.skill_ids | skillIdsToQuery}}'
+        a ng-href='#/vacancies/search?salary={{applicant.expected_salary}}{{applicant.skills | skillsToQuery}}'
           | Вакансии

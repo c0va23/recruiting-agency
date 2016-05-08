@@ -5,20 +5,8 @@ angular.module('app')
       restrict: 'E',
       templateUrl: 'shared/skills.html',
       scope: {
-        skillIds: '='
+        skills: '='
       },
-      controller: [
-        '$scope',
-        'Skill',
-        function(
-          $scope,
-          Skill
-        ) {
-          Skill.query(function(skills){
-            $scope.skillsById = _.indexBy(skills, 'id');
-          })
-        }
-      ]
     }
   }
 ])

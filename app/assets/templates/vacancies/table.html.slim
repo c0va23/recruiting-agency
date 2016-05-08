@@ -18,9 +18,9 @@ table.table ng-controller='VacancyTableController'
       td
         | {{vacancy.created_at | date}}
       td ng-class='{danger: !matchVacancySkills(vacancy)}'
-        ra-skills skill-ids="vacancy.skill_ids"
+        ra-skills skills="vacancy.skills"
       td
         a href='#/vacancies/{{vacancy.id}}/edit' Редактировать
         | &nbsp;
-        a href='#/applicants/search?salary={{vacancy.salary}}{{vacancy.skill_ids | skillIdsToQuery}}'
+        a href='#/applicants/search?salary={{vacancy.salary}}{{vacancy.skills | skillsToQuery}}'
           | Кандидаты
