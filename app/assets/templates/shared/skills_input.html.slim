@@ -4,5 +4,12 @@ tags-input[
   key-property='id'
   on-tag-added="createSkill($tag)"
   placeholder='Введите умения'
+  replace-spaces-with-dashes='false'
+  add-on-enter='false'
+  min-length='1'
 ]
-  auto-complete source='findSkills($query)'
+  auto-complete(
+    source='findSkills($query)'
+    load-on-down-arrow='true'
+    min-length='1'
+  )
