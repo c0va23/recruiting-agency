@@ -48,12 +48,15 @@ angular.module('app')
               return skill.name == newSkill.name;
             });
 
-            if(existedSkill != undefined) return;
+            if(undefined != existedSkill) return true;
 
             Skill.save(newSkill, function(savedSkill) {
               newSkill.id = savedSkill.id;
               setSkillIds();
+              skills.push(savedSkill);
             });
+
+            return true;
           };
         }
       ],
