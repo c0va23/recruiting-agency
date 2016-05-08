@@ -21,7 +21,16 @@ table.table ng-controller='ApplicantTableController'
       td ng-class='{danger: false == matchApplicantSkills(applicant)}'
         ra-skills skills='applicant.skills'
       td
-        a href='#/applicants/{{applicant.id}}/edit' Редактировать
+        a(
+          href="#/applicants/{{applicant.id}}/edit"
+          title="Редактировать"
+        )
+          span.glyphicon.glyphicon-pencil
+
         | &nbsp;
-        a ng-href='#/vacancies/search?salary={{applicant.expected_salary}}{{applicant.skills | skillsToQuery}}'
-          | Вакансии
+
+        a(
+          ng-href="#/vacancies/search?salary={{applicant.expected_salary}}{{applicant.skills | skillsToQuery}}"
+          title="Вакансии"
+        )
+          span.glyphicon.glyphicon-search
