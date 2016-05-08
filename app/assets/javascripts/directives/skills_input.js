@@ -38,7 +38,7 @@ angular.module('app')
 
           $scope.findSkills = function(query) {
             return _(skills).filter(function(skill){
-              return skill.name.indexOf(query) >= 0
+              return skill.name.toLowerCase().indexOf(query.toLowerCase()) >= 0
             });
           };
 
