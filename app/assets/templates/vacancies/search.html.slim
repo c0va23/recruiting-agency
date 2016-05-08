@@ -21,6 +21,16 @@ form.form ng-submit="search()"
       min="0"
     )
 
+  .checkbox
+    label
+      input(
+        type="checkbox"
+        ng-model="query.partial_match"
+        ng-true-value="'1'"
+        ng-false-value="undefined"
+      )
+      | Частичтный поиск
+
   .form-group
     button.btn.btn-default Найти
 

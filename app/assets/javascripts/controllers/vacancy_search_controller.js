@@ -16,6 +16,7 @@ angular.module('app')
     $scope.vacancies = Vacancy.search(params);
 
     $scope.query = {
+      partial_match: params.partial_match,
       salary: Number.parseFloat(params.salary),
       'skill_ids[]': _.map(params['skill_ids[]'], function(skillIdStr){
         return Number.parseInt(skillIdStr);
