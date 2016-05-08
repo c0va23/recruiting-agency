@@ -1,19 +1,31 @@
 angular.module('app')
 .controller('VacancySearchController', [
   '$scope',
-  '$route',
+  '$location',
   'Vacancy',
+  'Skill',
   'skillIdsQueryParse',
   function(
     $scope,
-    $route,
+    $location,
     Vacancy,
+    Skill,
     skillIdsQueryParse
   ) {
-    $scope.vacancies = Vacancy.search($route.current.params);
+    var params = angular.copy($location.search());
+    $scope.vacancies = Vacancy.search(params);
 
-    $scope.salary = $route.current.params.salary;
+    $scope.query = {
+      salary: Number.parseFloat(params.salary),
+      'skill_ids[]': _.map(params['skill_ids[]'], function(skillIdStr){
+        return Number.parseInt(skillIdStr);
+      }),
+    }
 
-    $scope.skillIds = skillIdsQueryParse($route.current.params['skill_ids[]']);
+    $scope.skills = Skill.query();
+
+    $scope.search = function() {
+      $location.search($scope.query);
+    };
   }
 ]);

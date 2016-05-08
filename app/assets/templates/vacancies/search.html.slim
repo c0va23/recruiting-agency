@@ -1,12 +1,27 @@
 h1 Поиск вакансий
 
-h2 Умения
+form.form ng-submit="search()"
+  .form-group
+    label Умения
+    div.checkbox
+      label.checkbox-inline ng-repeat='skill in skills'
+        input(
+          type="checkbox"
+          checklist-model="query['skill_ids[]']"
+          checklist-value="skill.id"
+        )
+        |  {{skill.name}}
 
-ra-skills skill-ids='skillIds'
+  .form-group
+    label for='salary' Зарплата
+    input.form-control(
+      id="salary"
+      type="number"
+      ng-model="query.salary"
+      min="0"
+    )
 
-h2 Зарплата
-
-strong
-  | {{salary}}
+  .form-group
+    button.btn.btn-default Найти
 
 ng-include src='"vacancies/table.html"'
