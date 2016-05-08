@@ -12,8 +12,8 @@ html ng-app='app'
       .container-fluid
         navbar-header
           ul.nav.navbar-nav
-            li ng-class='{active: $location.url() == "/vacancies"}'
+            li ng-class='{active: 0 == $location.url().indexOf("/vacancies")}'
               a ng-href='#/vacancies' Вакансии
-            li ng-class='{active: $location.url() == "/applicants"}'
+            li ng-class='{active: 0 == $location.url().indexOf("/applicants")}'
               a ng-href='#/applicants' Соискатели
     ng-view
