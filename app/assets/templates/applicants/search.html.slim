@@ -1,18 +1,18 @@
 h1 Поиск соискателей
 
-form.form.form ng-submit='search()'
-  h2 Умения
+form.form ng-submit='search()'
+  .form-group
+    label Умения
+    .checkbox
+      label.checkbox-inline ng-repeat='skill in skills'
+        input type='checkbox' checklist-model="query['skill_ids[]']" checklist-value='skill.id'
+        | {{skill.name}}
 
-  div.checkbox
-    label.checkbox-inline ng-repeat='skill in skills'
-      input type='checkbox' checklist-model="query['skill_ids[]']" checklist-value='skill.id'
-      | {{skill.name}}
-
-  div.form-group
+  .form-group
     label Зарплата
     input.form-control type='number' min=0 ng-model='query.salary'
 
-  div.checkbox
+  .checkbox
     label
       input(
         type='checkbox'
