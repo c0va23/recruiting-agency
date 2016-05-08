@@ -1,4 +1,4 @@
-table.table
+table.table ng-controller='VacancyTableController'
   thead
     tr
       td Название
@@ -13,11 +13,11 @@ table.table
         | {{vacancy.name}}
       td
         | {{vacancy.contacts}}
-      td
+      td ng-class='{danger: !matchVacancySalary(vacancy)}'
         | {{vacancy.salary}}
       td
         | {{vacancy.created_at | date}}
-      td
+      td ng-class='{danger: !matchVacancySkills(vacancy)}'
         ra-skills skill-ids="vacancy.skill_ids"
       td
         a href='#/vacancies/{{vacancy.id}}/edit' Редактировать
