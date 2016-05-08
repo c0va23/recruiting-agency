@@ -37,8 +37,9 @@ angular.module('app')
           });
 
           $scope.findSkills = function(query) {
+            var lowerCaseQuery = query.toLowerCase();
             return _(skills).filter(function(skill){
-              return skill.name.toLowerCase().indexOf(query.toLowerCase()) >= 0
+              return skill.lowerCaseName().indexOf(lowerCaseQuery) >= 0
             });
           };
 
