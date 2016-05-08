@@ -1,5 +1,12 @@
 h1 Соискатели
 
-a.btn.btn-default href='#/applicants/new' Новый соискатель
+a.btn.btn-default href='#/applicants/new'
+  span.glyphicon.glyphicon-plus
+  | &nbsp;
+  | Новый соискатель
+a.btn.btn-default href='#/applicants/search'
+  span.glyphicon.glyphicon-search
+  | &nbsp;
+  | Поиск соискателей
 
 ng-include src='"applicants/table.html"'

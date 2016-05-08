@@ -1,5 +1,12 @@
 h1 Вакансии
 
-a.btn.btn-default href='#/vacancies/new' Новыя вакансия
+a.btn.btn-default href='#/vacancies/new'
+  span.glyphicon.glyphicon-plus
+  | &nbsp;
+  | Новыя вакансия
+a.btn.btn-default href='#/vacancies/search'
+  span.glyphicon.glyphicon-search
+  | &nbsp;
+  | Поиск вакансий
 
 ng-include src='"vacancies/table.html"'
