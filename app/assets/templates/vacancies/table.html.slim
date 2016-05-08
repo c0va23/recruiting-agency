@@ -13,11 +13,11 @@ table.table ng-controller='VacancyTableController'
         | {{vacancy.name}}
       td
         | {{vacancy.contacts}}
-      td ng-class='{danger: !matchVacancySalary(vacancy)}'
+      td ng-class='{danger: false == matchVacancySalary(vacancy)}'
         | {{vacancy.salary}}
       td
         | {{vacancy.created_at | date}}
-      td ng-class='{danger: !matchVacancySkills(vacancy)}'
+      td ng-class='{danger: false == matchVacancySkills(vacancy)}'
         ra-skills skills="vacancy.skills"
       td
         a href='#/vacancies/{{vacancy.id}}/edit' Редактировать

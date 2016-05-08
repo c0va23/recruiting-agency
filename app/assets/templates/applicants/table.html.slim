@@ -11,14 +11,14 @@ table.table ng-controller='ApplicantTableController'
     tr ng-repeat='applicant in applicants'
       th
         | {{applicant.name}}
-      td ng-class='{danger: !matchApplicantSalary(applicant)}'
+      td ng-class='{danger: false == matchApplicantSalary(applicant)}'
         | {{applicant.expected_salary}}
       td
         strong ng-if='applicant.active' Активен
         i ng-if='!applicant.active' Не активет
       td
         | {{applicant.contact}}
-      td ng-class='{danger: !matchApplicantSkills(applicant)}'
+      td ng-class='{danger: false == matchApplicantSkills(applicant)}'
         ra-skills skills='applicant.skills'
       td
         a href='#/applicants/{{applicant.id}}/edit' Редактировать
