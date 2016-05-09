@@ -148,6 +148,8 @@ GEM
       roar (>= 1.0.0, <= 1.1.0)
       test_xml (>= 0.1.6)
       uber (>= 0.0.5)
+    rollbar (2.11.2)
+      multi_json
     rspec-core (3.4.4)
       rspec-support (~> 3.4.0)
     rspec-expectations (3.4.0)
@@ -235,6 +237,7 @@ DEPENDENCIES
   rails_12factor
   responders
   roar-rails (~> 1.0)
+  rollbar
   rspec-rails (~> 3.4.0)
   sass-rails (~> 5.0)
   shoulda-matchers (~> 3.1)

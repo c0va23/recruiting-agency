@@ -48,6 +48,8 @@ end
 
 gem 'puma'
 
+gem 'rollbar'
+
 group :production do
   gem 'rails_12factor' # for heroku
 end
