@@ -1,5 +1,9 @@
 class ApplicantSearcher
-  def initialize(skill_ids:, salary:, partial_match: false)
+  def initialize(
+    skill_ids: [],
+    salary: 0,
+    partial_match: false
+  )
     @skill_ids = skill_ids
     @salary = salary
     @partial_match = partial_match
