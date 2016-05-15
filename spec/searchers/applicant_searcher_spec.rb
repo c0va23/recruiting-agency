@@ -130,7 +130,7 @@ RSpec.describe ApplicantSearcher do
 
       context 'when exist full and partial matched applicants' do
         let!(:applicants) do
-          skills.count.downto(rand(skills.count)).flat_map do |skill_count|
+          skills.count.downto(rand(1..skills.count)).flat_map do |skill_count|
             1.upto(rand(3..5)).map do |salary_index|
               create :applicant,
                 skills: skills.sample(skill_count),
