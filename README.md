@@ -1,5 +1,7 @@
 # Recruitment agency
 
+[![Build Status](https://travis-ci.org/c0va23/recruitment-agency.svg?branch=master)](https://travis-ci.org/c0va23/recruitment-agency)
+
 ## Install
 
 ```bash
