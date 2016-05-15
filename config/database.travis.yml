@@ -1,0 +1,10 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  timeout: 5000
+
+test:
+  <<: *default
+  database: recruitment_agency_test
+  username: postgres
