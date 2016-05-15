@@ -6,6 +6,7 @@ addons:
 env:
   - RAILS_ENV=test
 bundler_args: --without production development
+cache: bundler
 before_script:
   - cp config/database.travis.yml config/database.yml
   - psql -c 'create database recruitment_agency_test;' -U postgres
